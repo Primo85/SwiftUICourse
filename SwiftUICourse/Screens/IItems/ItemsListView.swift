@@ -7,7 +7,7 @@ struct ItemsListView: View {
     var body: some View {
         LoadingStack(isLoading: viewModel.isLoading) {
             List {
-                AppButton(title: "Fetch Data") { viewModel.fetchData() }
+                AppButton("Fetch Data") { viewModel.fetchData() }
                 ForEach(viewModel.items) { item in
                     NavigationLink {
                         ItemDetailsView(item: item,

@@ -7,7 +7,7 @@ struct ItemsView: View {
     var body: some View {
         LoadingStack(isLoading: viewModel.isLoading) {
             ScrollView {
-                AppButton(title: "Fetch Data") { viewModel.fetchData() }
+                AppButton("Fetch Data") { viewModel.fetchData() }
                 AppGrid(columns: 3) {
                     ForEach(viewModel.items) { item in
                         ItemPreView(item: item)

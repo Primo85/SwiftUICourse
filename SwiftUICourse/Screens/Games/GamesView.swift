@@ -44,7 +44,7 @@ struct GamesView: View {
                     }
                     .frame(width: 256.0)
                 }
-                AppButton(title: "Add player") {
+                AppButton("Add player") {
                     alertPresented = true
                 }
             }
@@ -52,13 +52,13 @@ struct GamesView: View {
             VStack(spacing: 32) {
                 Text("Games:")
                     .font(.largeTitle)
-                AppButton(title: "MEMO", isActive: players.count > 0) {
+                AppButton("MEMO", isActive: players.count > 0) {
                     memoSizePresented = true
                 }
-                AppButton(title: "TIC TAC TOE", isActive: players.count == 2) {
+                AppButton("TIC TAC TOE", isActive: players.count == 2) {
                     isTicTacToePresented = true
                 }
-                AppButton(title: "AIContent") {
+                AppButton("AIContent") {
                     AIContentPresented = true
                 }
             }
@@ -75,19 +75,19 @@ struct GamesView: View {
         })
         .alert("Chose size",isPresented: $memoSizePresented) { // TODO: how to skip this alert ?
             ForEach(2..<9) { n in
-                AppButton(title: "\(n)x\(n)            \(resultFor(size: n))") {
+                AppButton("\(n)x\(n)            \(resultFor(size: n))") {
                     memoSize = n
                     isMemoPresented = true
                 }
             }
-            AppButton(title: "Cancel") {
+            AppButton("Cancel") {
                 memoSizePresented = false
             }
         }
         .alert("Add player", isPresented: $alertPresented) {
             TextField("Enter your name", text: $playerToAdd)
-            AppButton(title: "Cancel") { }
-            AppButton(title: "OK") {
+            AppButton("Cancel") { }
+            AppButton("OK") {
                 addPlayer()
             }
         }

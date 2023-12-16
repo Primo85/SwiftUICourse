@@ -30,15 +30,16 @@ struct CounterView: View {
             VStack(spacing: 32) {
                 Spacer()
                 Text("Random number is: \(viewModel.randomNumber)")
-                Button("Randomize number") {
+                AppButton("Randomize number") {
                     viewModel.randomNumber = (0..<1000).randomElement()!
                 }
                 Text("Count is: \(viewModel.count)")
-                Button("Increment Counter") {
+                AppButton("Increment Counter") {
                     viewModel.incrementCounter()
                 }
-                Spacer()
-                AnimatedView()
+                AppButton("TEST") {
+                    ContolFlow.breakingLoop()
+                }
                 Spacer()
             }
             
@@ -46,22 +47,6 @@ struct CounterView: View {
             .stroke(lineWidth: 12.0)
             .animation(.linear(duration: 3), value: viewModel.scale)
         }
-    }
-}
-
-struct AnimatedView: View {
-    @State private var rotationAngle: Double = 0
-    
-    var body: some View {
-        Rectangle()
-            .fill(Color.blue)
-            .frame(width: 200, height: 200)
-            .rotationEffect(.degrees(rotationAngle))
-            .animation(.linear(duration: 1)) // Add the animation modifier here
-            .onAppear {
-                print("onAppear")
-                self.rotationAngle += 360 // Change the property to trigger animation
-            }
     }
 }
 

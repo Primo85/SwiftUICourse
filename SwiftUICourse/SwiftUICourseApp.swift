@@ -8,9 +8,9 @@ struct SwiftUICourseApp: App {
     var body: some Scene {
         WindowGroup {
 //            MainView()
-            GamesView()
+//            GamesView()
 //            CombineTestView()
-//            TestView()
+            TestView()
 //            GuitarView()
 //            Text("Hello world")
 //                .onAppear() {

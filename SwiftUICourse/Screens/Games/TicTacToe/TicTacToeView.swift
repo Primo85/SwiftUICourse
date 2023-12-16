@@ -37,7 +37,7 @@ struct TicTacToeView: View {
             DynamicStack {
                 XdissmissButton(isPresented: $isPresented)
                 PlayersResultsView(players: viewModel.players, currentID: viewModel.currentID)
-                AppButton(title: "Reset") {
+                AppButton("Reset") {
                     viewModel.reset()
                 }
             }

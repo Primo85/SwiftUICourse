@@ -6,7 +6,7 @@ struct AppButton: View {
     let isActive: Bool
     let action: () -> Void
     
-    init(title: String, isActive: Bool = true, action: @escaping () -> Void) {
+    init(_ title: String, isActive: Bool = true, action: @escaping () -> Void) {
         self.title = title
         self.isActive = isActive
         self.action = action

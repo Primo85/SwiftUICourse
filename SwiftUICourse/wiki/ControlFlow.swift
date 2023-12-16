@@ -38,9 +38,9 @@ struct ContolFlow {
             if i < 5 {
                 print("less then 5")
             } else {
-//                continue
-//                break
-//                return
+//                continue // and of iteration, continue loop
+//                break // and of whole loop
+//                return // and of whole function
             }
             print("other stuff in loop")
         }

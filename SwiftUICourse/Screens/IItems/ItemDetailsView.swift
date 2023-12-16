@@ -15,11 +15,11 @@ struct ItemDetailsView: View {
             ItemPreView(item: item)
             Text(MockData.description)
                 .padding()
-            AppButton(title: "Open Link") {
+            AppButton("Open Link") {
                 isLinkPresented = true
             }
             #warning("doesnt work for list view")
-            AppButton(title: "Delete") {
+            AppButton("Delete") {
                 delete = true
             }
         }

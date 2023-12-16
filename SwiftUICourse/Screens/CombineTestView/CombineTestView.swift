@@ -10,16 +10,16 @@ struct CombineTestView: View {
             Text(viewModel.text1)
             Text(viewModel.text2)
             Text(viewModel.text3)
-            AppButton(title: "INCREASE") {
+            AppButton("INCREASE") {
                 viewModel.increase()
             }
-            AppButton(title: "TOGGLE") {
+            AppButton("TOGGLE") {
                 viewModel.toggle()
             }
-            AppButton(title: "COMPLETION") {
+            AppButton("COMPLETION") {
                 viewModel.completion()
             }
-            AppButton(title: "CANCEL") {
+            AppButton("CANCEL") {
                 viewModel.cancel()
             }
         }

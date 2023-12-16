@@ -32,7 +32,7 @@ struct MemoGameView: View {
                 Text("Fails:       \(viewModel.failCounter)")
                 Text("Best result: \(String(viewModel.bestResult) ?? "-")")
                 PlayersResultsView(players: viewModel.players, currentID: viewModel.currentID)
-                AppButton(title: "Reset") {
+                AppButton("Reset") {
                     viewModel.reset()
                 }
             }

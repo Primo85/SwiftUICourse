@@ -18,11 +18,11 @@ struct GameSummaryView: View {
                     .font(.largeTitle)
             }
             Text("Czy zagrać jeszcze raz?")
-            AppButton(title: "Tak") {
+            AppButton("Tak") {
                 reset()
                 isSummaryPresented = false
             }
-            AppButton(title: "Nie") {
+            AppButton("Nie") {
                 isGamePresented = false
             }
         }
