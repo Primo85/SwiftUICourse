@@ -26,7 +26,7 @@ struct TicTacToeView: View {
                 .aspectRatio(1, contentMode: .fill)
                 
                 if let line = viewModel.line {
-                    TicTacToeLine(line: line) { [weak viewModel] in
+                    TicTacToeLineView(line: line) { [weak viewModel] in
                         DispatchQueue.main.async {
                             viewModel?.animationComleted.send(true)
                         }

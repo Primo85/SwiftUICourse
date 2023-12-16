@@ -1,4 +1,7 @@
 
+postfix operator ++
+postfix func ++(lhs: inout Int) { lhs += 1 }
+
 extension String {
     init?(_ optInt: Int?) {
         if let int = optInt {

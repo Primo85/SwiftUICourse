@@ -1,13 +1,7 @@
 import SwiftUI
 import Combine
 
-enum TicTacToeLineType {
-    case x(CGFloat)
-    case y(CGFloat)
-    case d1, d2
-}
-
-struct TicTacToeLine: View {
+struct TicTacToeLineView: View {
     
     let line: TicTacToeLineType
     @State var scale: CGFloat = 0.0

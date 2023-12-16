@@ -120,3 +120,9 @@ final class TicTacToeViewModel: ObservableObject {
         currentPlayerIndex = (currentPlayerIndex + 1) % players.count
     }
 }
+
+enum TicTacToeLineType: Equatable {
+    case x(CGFloat)
+    case y(CGFloat)
+    case d1, d2
+}

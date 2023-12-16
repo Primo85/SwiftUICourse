@@ -1,8 +1,5 @@
 import Foundation
 
-postfix operator ++
-postfix func ++(lhs: inout Int) { lhs += 1 }
-
 struct ContolFlow {
     static let tab: [Int] = [1,2,3,4]
 
