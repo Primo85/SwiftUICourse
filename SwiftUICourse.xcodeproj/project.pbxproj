@@ -39,6 +39,7 @@
 		4D70357A2AF50EA30023A7F6 /* NutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7035792AF50EA30023A7F6 /* NutView.swift */; };
 		4D70357C2AF541BA0023A7F6 /* FredboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D70357B2AF541BA0023A7F6 /* FredboardView.swift */; };
 		4D7CD7BA2AF259D8000FAC29 /* GuitarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7CD7B92AF259D8000FAC29 /* GuitarView.swift */; };
+		4D8D02222B2D5DF0004A4453 /* AIContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D02212B2D5DF0004A4453 /* AIContent.swift */; };
 		4D941EF12AE84D1C00E03A41 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D941EF02AE84D1C00E03A41 /* Item.swift */; };
 		4D941EF32AE85F3D00E03A41 /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D941EF22AE85F3D00E03A41 /* ItemDetailsView.swift */; };
 		4D941EF52AE8656700E03A41 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D941EF42AE8656700E03A41 /* ItemsViewModel.swift */; };
@@ -60,7 +61,7 @@
 		4DE3853B2B23387000A33ACF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3853A2B23387000A33ACF /* Extensions.swift */; };
 		4DE3853D2B233BF700A33ACF /* TicTacToeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3853C2B233BF700A33ACF /* TicTacToeViewModel.swift */; };
 		4DE3853F2B233C4B00A33ACF /* TicTacToeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3853E2B233C4B00A33ACF /* TicTacToeCellView.swift */; };
-		4DE385412B233C7A00A33ACF /* TTTcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE385402B233C7A00A33ACF /* TTTcell.swift */; };
+		4DE385412B233C7A00A33ACF /* TicTacToecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE385402B233C7A00A33ACF /* TicTacToecell.swift */; };
 		4DF037442AF69389005381D4 /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF037432AF69389005381D4 /* Playground.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		4D7035792AF50EA30023A7F6 /* NutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutView.swift; sourceTree = "<group>"; };
 		4D70357B2AF541BA0023A7F6 /* FredboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FredboardView.swift; sourceTree = "<group>"; };
 		4D7CD7B92AF259D8000FAC29 /* GuitarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarView.swift; sourceTree = "<group>"; };
+		4D8D02212B2D5DF0004A4453 /* AIContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIContent.swift; sourceTree = "<group>"; };
 		4D941EF02AE84D1C00E03A41 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4D941EF22AE85F3D00E03A41 /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 		4D941EF42AE8656700E03A41 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 		4DE3853A2B23387000A33ACF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4DE3853C2B233BF700A33ACF /* TicTacToeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeViewModel.swift; sourceTree = "<group>"; };
 		4DE3853E2B233C4B00A33ACF /* TicTacToeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeCellView.swift; sourceTree = "<group>"; };
-		4DE385402B233C7A00A33ACF /* TTTcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTcell.swift; sourceTree = "<group>"; };
+		4DE385402B233C7A00A33ACF /* TicTacToecell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToecell.swift; sourceTree = "<group>"; };
 		4DF037432AF69389005381D4 /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,7 +200,7 @@
 				4DE3853C2B233BF700A33ACF /* TicTacToeViewModel.swift */,
 				4DE3853E2B233C4B00A33ACF /* TicTacToeCellView.swift */,
 				4D0D57B92B25EA9C001CFB61 /* TicTacToeLine.swift */,
-				4DE385402B233C7A00A33ACF /* TTTcell.swift */,
+				4DE385402B233C7A00A33ACF /* TicTacToecell.swift */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -208,6 +210,7 @@
 			children = (
 				4D61F8812B009AC4008E506D /* GamesView.swift */,
 				4DE385382B23187C00A33ACF /* GameSummaryView.swift */,
+				4D8D02212B2D5DF0004A4453 /* AIContent.swift */,
 				4D5847722AEAF26C00F55129 /* MemoGame */,
 				4D33EB182B2155530000C9A8 /* TicTacToe */,
 			);
@@ -405,7 +408,7 @@
 				4DF037442AF69389005381D4 /* Playground.swift in Sources */,
 				4D58476F2AEAE9DD00F55129 /* SafariView.swift in Sources */,
 				4D5847542AEA4F7B00F55129 /* Adapter.swift in Sources */,
-				4DE385412B233C7A00A33ACF /* TTTcell.swift in Sources */,
+				4DE385412B233C7A00A33ACF /* TicTacToecell.swift in Sources */,
 				4D58475F2AEA8F2500F55129 /* Modifiers.swift in Sources */,
 				4D941EF12AE84D1C00E03A41 /* Item.swift in Sources */,
 				4D941EF32AE85F3D00E03A41 /* ItemDetailsView.swift in Sources */,
@@ -427,6 +430,7 @@
 				4DC159CE2AF662980094A01D /* TypeCasting.swift in Sources */,
 				4DD7A99F2AFFA4EF001C15F1 /* DynamicStack.swift in Sources */,
 				4D5C7C262AF2A0720037DA44 /* FredView.swift in Sources */,
+				4D8D02222B2D5DF0004A4453 /* AIContent.swift in Sources */,
 				4D0D57BA2B25EA9C001CFB61 /* TicTacToeLine.swift in Sources */,
 				4D0B3CC72AE80FF000947BDF /* SwiftUICourseApp.swift in Sources */,
 				4D5847762AEB08D400F55129 /* Card.swift in Sources */,
@@ -503,7 +507,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -557,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

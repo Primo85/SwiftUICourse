@@ -3,7 +3,7 @@ import Combine
 
 final class TicTacToeViewModel: ObservableObject {
     
-    @Published private(set) var cells: [TTTcell]
+    @Published private(set) var cells: [TicTacToecell]
     @Published private(set) var players: [Player]
     @Published var isSummaryPresented: Bool = false
     
@@ -14,17 +14,17 @@ final class TicTacToeViewModel: ObservableObject {
     private var winnerIndex = CurrentValueSubject<Int?, Never>(nil)
     private(set) var animationComleted = PassthroughSubject<Bool, Never>()
     private var currentPlayerIndex = 0
-    private var currentState: TTTstate = .X
+    private var currentState: TicTacToestate = .X
     
     private var subjects = Set<AnyCancellable>()
     
     init(players: [Player]) {
         self.players = players
         self.cells = {
-            var cells: [TTTcell] = []
+            var cells: [TicTacToecell] = []
             for y in 0..<3 {
                 for x in 0..<3 {
-                    cells.append(TTTcell(x: x, y: y))
+                    cells.append(TicTacToecell(x: x, y: y))
                 }
             }
             return cells
@@ -49,7 +49,7 @@ final class TicTacToeViewModel: ObservableObject {
         
         animationComleted
             .filter { $0 }
-            .assign(to: &$isSummaryPresented)
+            .assign(to: &$isSummaryPresented) // TODO: try to combine counter and animationComleted somehow
     }
     
     func click(on id: String) {
@@ -59,7 +59,8 @@ final class TicTacToeViewModel: ObservableObject {
         cells[i].state = currentState
         currentState.toggle()
         counter.value++
-        checkSolution()
+        checkSolution(for: .X)
+        checkSolution(for: .O)
         switchPlayer()
     }
     
@@ -80,68 +81,36 @@ final class TicTacToeViewModel: ObservableObject {
     
     // MARK: private
     
-    private func checkSolution() {
-        let Xcells = cells.filter { $0.state == .X }
-        let Ocells = cells.filter { $0.state == .O }
+    private func checkSolution(for state: TicTacToestate) {
+        let cells = cells.filter { $0.state == state }
+        let index = state == .X ? 0 : 1
         for x in 0..<3 {
-            if Xcells.contains(where: { $0.x == x && $0.y == 0 }),
-               Xcells.contains(where: { $0.x == x && $0.y == 1 }),
-               Xcells.contains(where: { $0.x == x && $0.y == 2 }) {
-                print("check if")
+            if cells.contains(where: { $0.x == x && $0.y == 0 }),
+               cells.contains(where: { $0.x == x && $0.y == 1 }),
+               cells.contains(where: { $0.x == x && $0.y == 2 }) {
                 line = .x(CGFloat(x))
-                winnerIndex.send(0)
-            }
-            if Ocells.contains(where: { $0.x == x && $0.y == 0 }),
-               Ocells.contains(where: { $0.x == x && $0.y == 1 }),
-               Ocells.contains(where: { $0.x == x && $0.y == 2 }) {
-                print("check if")
-                line = .x(CGFloat(x))
-                winnerIndex.send(1)
+                winnerIndex.send(index)
             }
         }
         for y in 0..<3 {
-            if Xcells.contains(where: { $0.y == y && $0.x == 0 }),
-               Xcells.contains(where: { $0.y == y && $0.x == 1 }),
-               Xcells.contains(where: { $0.y == y && $0.x == 2 }) {
-                print("check if")
+            if cells.contains(where: { $0.y == y && $0.x == 0 }),
+               cells.contains(where: { $0.y == y && $0.x == 1 }),
+               cells.contains(where: { $0.y == y && $0.x == 2 }) {
                 line = .y(CGFloat(y))
-                winnerIndex.send(0)
-            }
-            if Ocells.contains(where: { $0.y == y && $0.x == 0 }),
-               Ocells.contains(where: { $0.y == y && $0.x == 1 }),
-               Ocells.contains(where: { $0.y == y && $0.x == 2 }) {
-                print("check if")
-                line = .y(CGFloat(y))
-                winnerIndex.send(1)
+                winnerIndex.send(index)
             }
         }
-        if Xcells.contains(where: { $0.y == 0 && $0.x == 0 }),
-           Xcells.contains(where: { $0.y == 1 && $0.x == 1 }),
-           Xcells.contains(where: { $0.y == 2 && $0.x == 2 }) {
-            print("check if")
+        if cells.contains(where: { $0.y == 0 && $0.x == 0 }),
+           cells.contains(where: { $0.y == 1 && $0.x == 1 }),
+           cells.contains(where: { $0.y == 2 && $0.x == 2 }) {
             line = .d1
-            winnerIndex.send(0)
+            winnerIndex.send(index)
         }
-        if Xcells.contains(where: { $0.y == 0 && $0.x == 2 }),
-           Xcells.contains(where: { $0.y == 1 && $0.x == 1 }),
-           Xcells.contains(where: { $0.y == 2 && $0.x == 0 }) {
-            print("check if")
+        if cells.contains(where: { $0.y == 0 && $0.x == 2 }),
+           cells.contains(where: { $0.y == 1 && $0.x == 1 }),
+           cells.contains(where: { $0.y == 2 && $0.x == 0 }) {
             line = .d2
-            winnerIndex.send(0)
-        }
-        if Ocells.contains(where: { $0.y == 0 && $0.x == 0 }),
-           Ocells.contains(where: { $0.y == 1 && $0.x == 1 }),
-           Ocells.contains(where: { $0.y == 2 && $0.x == 2 }) {
-            print("check if")
-            line = .d1
-            winnerIndex.send(1)
-        }
-        if Ocells.contains(where: { $0.y == 0 && $0.x == 2 }),
-           Ocells.contains(where: { $0.y == 1 && $0.x == 1 }),
-           Ocells.contains(where: { $0.y == 2 && $0.x == 0 }) {
-            print("check if")
-            line = .d2
-            winnerIndex.send(1)
+            winnerIndex.send(index)
         }
     }
     
@@ -149,9 +118,5 @@ final class TicTacToeViewModel: ObservableObject {
         guard counter.value < 9,
               winnerIndex.value == nil else { return }
         currentPlayerIndex = (currentPlayerIndex + 1) % players.count
-    }
-    
-    deinit {
-        print("TicTacToeViewModel deinit")
     }
 }

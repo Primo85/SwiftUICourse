@@ -5,6 +5,7 @@ struct GamesView: View {
     @State private var isMemoPresented: Bool = false
     @State private var memoSizePresented = false
     @State private var isTicTacToePresented: Bool = false
+    @State private var AIContentPresented: Bool = false
     @State private var memoSize = 4
     @State private var alertPresented: Bool = false
     @State private var players: [Player] = [Player(name: "Przemo"), Player(name: "Karolina")]
@@ -57,6 +58,9 @@ struct GamesView: View {
                 AppButton(title: "TIC TAC TOE", isActive: players.count == 2) {
                     isTicTacToePresented = true
                 }
+                AppButton(title: "AIContent") {
+                    AIContentPresented = true
+                }
             }
             Spacer()
         }
@@ -66,6 +70,9 @@ struct GamesView: View {
         .fullScreenCover(isPresented: $isTicTacToePresented) {
             TicTacToeView(players: players, isPresented: $isTicTacToePresented)
         }
+        .fullScreenCover(isPresented: $AIContentPresented, content: {
+            AIContentView()
+        })
         .alert("Chose size",isPresented: $memoSizePresented) { // TODO: how to skip this alert ?
             ForEach(2..<9) { n in
                 AppButton(title: "\(n)x\(n)            \(resultFor(size: n))") {

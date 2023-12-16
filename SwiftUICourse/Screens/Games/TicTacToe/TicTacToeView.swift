@@ -9,12 +9,10 @@ struct TicTacToeView: View {
     init(players: [Player], isPresented: Binding<Bool>) {
         self._viewModel = StateObject(wrappedValue: TicTacToeViewModel(players: players))
         self._isPresented = isPresented
-        print("init TicTacToeView") // TODO: remove
     }
     
     var body: some View {
-        print("render TicTacToeView")
-        return DynamicStack { // TODO: remove return
+        DynamicStack {
             ZStack {
                 DynamicGrid(items: 3) {
                     ForEach(viewModel.cells) { cell in
@@ -28,9 +26,9 @@ struct TicTacToeView: View {
                 .aspectRatio(1, contentMode: .fill)
                 
                 if let line = viewModel.line {
-                    TicTacToeLine(line: line) {
+                    TicTacToeLine(line: line) { [weak viewModel] in
                         DispatchQueue.main.async {
-                            viewModel.animationComleted.send(true)
+                            viewModel?.animationComleted.send(true)
                         }
                     }
                 }
@@ -46,6 +44,7 @@ struct TicTacToeView: View {
             .padding()
         }
         .backgroundGradient()
+        // iOS BUG : https://developer.apple.com/forums/thread/738840
         .sheet(isPresented: $viewModel.isSummaryPresented) {
             GameSummaryView(isGamePresented: $isPresented,
                             isSummaryPresented: $viewModel.isSummaryPresented,

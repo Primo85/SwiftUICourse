@@ -1,12 +1,12 @@
 
-struct TTTcell: Identifiable {
+struct TicTacToecell: Identifiable {
     var id: String { "\(x)\(y)" }
     let x: Int
     let y: Int
-    var state: TTTstate = .none
+    var state: TicTacToestate = .none
 }
 
-enum TTTstate: String {
+enum TicTacToestate: String {
     case X
     case O
     case none = "  "

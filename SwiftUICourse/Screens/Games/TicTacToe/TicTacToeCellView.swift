@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TicTacToeCellView: View {
     
-    let cell: TTTcell
+    let cell: TicTacToecell
     
     var body: some View {
         Text(cell.state.rawValue)
