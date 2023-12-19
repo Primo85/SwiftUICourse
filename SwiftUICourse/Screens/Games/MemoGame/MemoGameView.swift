@@ -42,9 +42,10 @@ struct MemoGameView: View {
         .sheet(isPresented: $viewModel.isSummaryPresented) {
             GameSummaryView(isGamePresented: $isPresented,
                             isSummaryPresented: $viewModel.isSummaryPresented,
-                            winnerName: viewModel.winnerName,
+                            result: viewModel.result.value!,
                             reset: viewModel.reset)
         }
+#warning("RESOLVE THIS viewModel.result.value!")
     }
 }
 

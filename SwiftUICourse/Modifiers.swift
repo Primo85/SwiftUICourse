@@ -38,7 +38,7 @@ struct TransparentBackground: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .background(Color(white: 0.5, opacity: 0.2))
+            .background(Color.appTransparent)
     }
 }
 
@@ -78,4 +78,9 @@ struct AnimationCompletionObserverModifier<Value>: AnimatableModifier where Valu
         /// We're not really modifying the view so we can directly return the original input value.
         return content
     }
+}
+
+
+extension Color {
+    static let appTransparent = Color(white: 0.5, opacity: 0.2)
 }

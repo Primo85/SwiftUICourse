@@ -8,11 +8,11 @@ final class TicTacToeViewModel: ObservableObject {
     @Published var isSummaryPresented: Bool = false
     
     @Published private(set) var line: TicTacToeLineType?
-    @Published private(set) var winnerName: String?
     
     private var counter = CurrentValueSubject<Int, Never>(0)
     private var winnerIndex = CurrentValueSubject<Int?, Never>(nil)
     private(set) var animationComleted = PassthroughSubject<Bool, Never>()
+    let result = CurrentValueSubject<GameResult?, Never>(nil)
     private var currentPlayerIndex = 0
     private var currentState: TicTacToestate = .X
     
@@ -40,12 +40,22 @@ final class TicTacToeViewModel: ObservableObject {
         
         winnerIndex
             .map { [weak self] in self?.players[safe: $0]?.name }
-            .assign(to: &$winnerName)
+            .sink { [weak self] winner in
+                if let winner = winner {
+                    self?.result.send(.victory(winner))
+                }
+            }
+            .store(in: &subjects)
         
         counter
-            .map { $0 == 9 }
-            .filter { $0 }
-            .assign(to: &$isSummaryPresented)
+            .filter { $0 == 9 }
+            .zip(winnerIndex)
+            .sink { [weak self] con, ind in
+                if ind == nil {
+                    self?.result.send(.draw)
+                }
+            }
+            .store(in: &subjects)
         
         animationComleted
             .filter { $0 }
@@ -73,6 +83,7 @@ final class TicTacToeViewModel: ObservableObject {
         }
         line = nil
         winnerIndex.value = nil
+        result.send(nil)
     }
     
     var currentID: String {

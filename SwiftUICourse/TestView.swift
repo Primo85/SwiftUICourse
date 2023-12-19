@@ -38,7 +38,7 @@ struct CounterView: View {
                     viewModel.incrementCounter()
                 }
                 AppButton("TEST") {
-                    ContolFlow.breakingLoop()
+                    
                 }
                 Spacer()
             }

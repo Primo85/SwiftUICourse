@@ -15,7 +15,7 @@ struct TicTacToeLineView: View {
     
     private func animate() {
         if #available(iOS 17.0, *) { // TODO: remove this and increase target ver after fix iOS 17 memory leak
-            withAnimation(.linear(duration: 1)) {
+            withAnimation(.linear(duration: 0.5)) {
                 scale = 1.0
             } completion: {
                 print("animation's done")

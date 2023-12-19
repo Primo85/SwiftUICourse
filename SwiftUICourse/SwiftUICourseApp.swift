@@ -12,6 +12,7 @@ struct SwiftUICourseApp: App {
 //            CombineTestView()
 //            TestView()
             ZipCombineLatestView()
+//            HexSaperGameView(player: Player(name: "Przemo"), isPresented: .constant(true))
 //            GuitarView()
 //            Text("Hello world")
 //                .onAppear() {
