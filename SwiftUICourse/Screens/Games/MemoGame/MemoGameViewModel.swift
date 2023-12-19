@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 // TODO: MemoGameViewModel and MemoGameViewModelImpl
 
@@ -16,6 +17,7 @@ final class MemoGameViewModel: ObservableObject {
     private var userInteractionEnabled = true
     private var currentPlayerIndex = 0
     private var firstPicture: String?
+    let result = CurrentValueSubject<GameResult?, Never>(nil)
     
     init(size: Int, players: [Player]) {
         let size = min(max(size, 2), 8)
@@ -25,7 +27,14 @@ final class MemoGameViewModel: ObservableObject {
         self._bestResult = UserDefaultsBackend<Int>(key: .memo(size))
         self.players = players
         getCards()
-        print("init MemoGameViewModel")
+        bind()
+    }
+    
+    private func bind() {
+        result
+            .map { $0 != nil }
+            .filter { $0 }
+            .assign(to: &$isSummaryPresented)
     }
     
     var currentID: String {
@@ -87,7 +96,11 @@ final class MemoGameViewModel: ObservableObject {
     
     private func checkEndOfGame() {
         if pairs == getPoints() {
-            isSummaryPresented = true
+            if let winnerName = winnerName {
+                result.send(.victory(winnerName))
+            } else {
+                result.send(.draw)
+            }
             bestResult = failCounter < bestResult ?? 10000 ? failCounter : bestResult // TODO: some refactor ?
         }
     }

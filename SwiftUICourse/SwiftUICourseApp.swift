@@ -8,10 +8,10 @@ struct SwiftUICourseApp: App {
     var body: some Scene {
         WindowGroup {
 //            MainView()
-//            GamesView()
+            GamesView()
 //            CombineTestView()
 //            TestView()
-//            HexContentView()
+//            HexSaperGameView(player: Player(name: "Przemo"), isPresented: .constant(true))
 //            GuitarView()
 //            Text("Hello world")
 //                .onAppear() {

@@ -2,14 +2,14 @@ import SwiftUI
 
 struct HexView<T: View>: View {
     
-    let content: T
+    let content: () -> T
     
     var body: some View {
         ZStack {
             HexShape()
                 .fill(Color.appTransparent)
                 .scaleEffect(0.97)
-            content
+            content()
         }
     }
     

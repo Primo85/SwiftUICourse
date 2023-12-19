@@ -6,6 +6,7 @@ struct GamesView: View {
     @State private var memoSizePresented = false
     @State private var isTicTacToePresented: Bool = false
     @State private var AIContentPresented: Bool = false
+    @State private var isHexSaperPresented: Bool = false
     @State private var memoSize = 4
     @State private var alertPresented: Bool = false
     @State private var players: [Player] = [Player(name: "Przemo"), Player(name: "Karolina")]
@@ -58,8 +59,11 @@ struct GamesView: View {
                 AppButton("TIC TAC TOE", isActive: players.count == 2) {
                     isTicTacToePresented = true
                 }
-                AppButton("AIContent") {
-                    AIContentPresented = true
+//                AppButton("AIContent") {
+//                    AIContentPresented = true
+//                }
+                AppButton("HEX SAPER", isActive: players.count == 1) {
+                    isHexSaperPresented = true
                 }
             }
             Spacer()
@@ -72,6 +76,9 @@ struct GamesView: View {
         }
         .fullScreenCover(isPresented: $AIContentPresented, content: {
             AIContentView()
+        })
+        .fullScreenCover(isPresented: $isHexSaperPresented, content: {
+            HexSaperGameView(player: players.first!, isPresented: $isHexSaperPresented)
         })
         .alert("Chose size",isPresented: $memoSizePresented) { // TODO: how to skip this alert ?
             ForEach(2..<9) { n in

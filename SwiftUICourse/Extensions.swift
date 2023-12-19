@@ -14,7 +14,7 @@ extension String {
 
 extension Array {
     subscript(safe index: Int?) -> Element? {
-        if let i = index, i < self.count {
+        if let i = index, 0 <= i, i < self.count {
             return self[i]
         } else {
             return nil
