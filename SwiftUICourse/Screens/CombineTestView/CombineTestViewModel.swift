@@ -15,7 +15,7 @@ final class CombineTestViewModel: ObservableObject {
     
     init() {
         ptSubject
-            .map { print("map"); return "C: \($0)"}
+            .map { "C: \($0)" }
             .assign(to: &$text1)
         
         cvSubject
@@ -62,9 +62,5 @@ final class CombineTestViewModel: ObservableObject {
     
     func cancel() {
         cancellables.forEach { $0.cancel() }
-    }
-    
-    deinit {
-        print("Combine test VM deinit")
     }
 }

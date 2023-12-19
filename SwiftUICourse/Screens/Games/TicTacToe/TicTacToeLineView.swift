@@ -5,32 +5,23 @@ struct TicTacToeLineView: View {
     
     let line: TicTacToeLineType
     @State var scale: CGFloat = 0.0
-    var animationComleted: () -> ()
     
-    init(line: TicTacToeLineType, animationComleted: @escaping () -> ()) {
-        print("init MyLine")
+    init(line: TicTacToeLineType) {
         self.line = line
-        self.animationComleted = animationComleted
     }
     
     private func animate() {
         if #available(iOS 17.0, *) { // TODO: remove this and increase target ver after fix iOS 17 memory leak
-            withAnimation(.linear(duration: 0.5)) {
+            withAnimation(.linear(duration: 1)) {
                 scale = 1.0
-            } completion: {
-                print("animation's done")
-                animationComleted()
             }
         } else {
             scale = 1.0
-            print("let say animation's done")
-            animationComleted()
         }
     }
     
     var body: some View {
-        print("render MyLine")
-        return LineShape(line: line, scale: scale)
+        LineShape(line: line, scale: scale)
             .stroke(lineWidth: 12.0)
             .onAppear() {
                 animate()
@@ -46,7 +37,6 @@ struct TicTacToeLineView: View {
         init(line: TicTacToeLineType, scale: CGFloat) {
             self.line = line
             self.scale = scale
-            print("init line \(self.line) \(self.scale)")
         }
         
         var animatableData: CGFloat {

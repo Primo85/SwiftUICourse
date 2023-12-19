@@ -3,13 +3,9 @@ import Combine
 
 class HexSaperGameViewModel: ObservableObject {
     
-    @Published var table: [[SaperHex]] = [
-        [SaperHex(),SaperHex(),SaperHex(),SaperHex()],
-        [SaperHex(),SaperHex(),SaperHex(),SaperHex()],
-        [SaperHex(),SaperHex(),SaperHex(),SaperHex()],
-        [SaperHex(),SaperHex(),SaperHex(),SaperHex()],
-        [SaperHex(),SaperHex(),SaperHex(),SaperHex()]
-    ]
+    @Published var table: [[SaperHex]] = Array(repeating: Array(repeating: SaperHex(), 
+                                                                count: 4),
+                                               count: 5)
     @Published var bombCount: Int = 0
     @Published var fails: Int = 0
     @Published var successes: Int = 0
@@ -31,18 +27,18 @@ class HexSaperGameViewModel: ObservableObject {
         result
             .map { $0 != nil }
             .filter { $0 }
+            .delay(for: 1, scheduler: RunLoop.main)
             .assign(to: &$isSummaryPresented)
         
         result
             .compactMap { $0 }
-            .filter { if case GameResult.victory = $0 { return true } else { return false} }
-            .sink { [weak self] _ in self?.successes++ }
-            .store(in: &subjects)
-        
-        result
-            .compactMap { $0 }
-            .filter { if case GameResult.defeat = $0 { return true } else { return false} }
-            .sink { [weak self] _ in self?.fails++ }
+            .sink { [weak self] in
+                if case .victory(_) = $0 {
+                    self?.successes++
+                } else if case .defeat = $0 {
+                    self?.fails++
+                }
+            }
             .store(in: &subjects)
     }
     
@@ -129,7 +125,6 @@ class HexSaperGameViewModel: ObservableObject {
         for i in 0..<table.count {
             for j in 0..<table[i].count {
                 if getNumber(i: i, j: j) == 0, !table[i][j].hasBomb {
-                    print("click")
                     discover(i: i, j: j)
                 }
             }

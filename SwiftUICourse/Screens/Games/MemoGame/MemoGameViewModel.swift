@@ -34,6 +34,7 @@ final class MemoGameViewModel: ObservableObject {
         result
             .map { $0 != nil }
             .filter { $0 }
+            .delay(for: 1, scheduler: RunLoop.main)
             .assign(to: &$isSummaryPresented)
     }
     
@@ -131,9 +132,5 @@ final class MemoGameViewModel: ObservableObject {
             switchPlayer()
             userInteractionEnabled = true
         }
-    }
-    
-    deinit {
-        print("deinit MemoGameViewModel")
     }
 }

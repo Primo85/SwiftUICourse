@@ -47,6 +47,7 @@
 		4D8D02552B2EDCF5004A4453 /* HexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D02542B2EDCF5004A4453 /* HexView.swift */; };
 		4D8D03C42B317EC9004A4453 /* HexSaperGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D03C32B317EC9004A4453 /* HexSaperGameViewModel.swift */; };
 		4D8D03C92B31F59B004A4453 /* SaperHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D03C82B31F59B004A4453 /* SaperHex.swift */; };
+		4D8D03CF2B32058D004A4453 /* ZipCombineLatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D03CE2B32058D004A4453 /* ZipCombineLatestView.swift */; };
 		4D941EF12AE84D1C00E03A41 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D941EF02AE84D1C00E03A41 /* Item.swift */; };
 		4D941EF32AE85F3D00E03A41 /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D941EF22AE85F3D00E03A41 /* ItemDetailsView.swift */; };
 		4D941EF52AE8656700E03A41 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D941EF42AE8656700E03A41 /* ItemsViewModel.swift */; };
@@ -128,6 +129,7 @@
 		4D8D02542B2EDCF5004A4453 /* HexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexView.swift; sourceTree = "<group>"; };
 		4D8D03C32B317EC9004A4453 /* HexSaperGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexSaperGameViewModel.swift; sourceTree = "<group>"; };
 		4D8D03C82B31F59B004A4453 /* SaperHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaperHex.swift; sourceTree = "<group>"; };
+		4D8D03CE2B32058D004A4453 /* ZipCombineLatestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCombineLatestView.swift; sourceTree = "<group>"; };
 		4D941EF02AE84D1C00E03A41 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4D941EF22AE85F3D00E03A41 /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 		4D941EF42AE8656700E03A41 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 		4DBF5DEA2B0C752B00E0895F /* CombineTestView */ = {
 			isa = PBXGroup;
 			children = (
+				4D8D03CE2B32058D004A4453 /* ZipCombineLatestView.swift */,
 				4DBF5DE82B0C751D00E0895F /* CombineTestView.swift */,
 				4DDD8B2B2B28470800C9423F /* CombineTestViewModel.swift */,
 			);
@@ -528,6 +531,7 @@
 				4D8D02552B2EDCF5004A4453 /* HexView.swift in Sources */,
 				4D0B3CC92AE80FF000947BDF /* ItemsView.swift in Sources */,
 				4D58475D2AEA806400F55129 /* AppGrid.swift in Sources */,
+				4D8D03CF2B32058D004A4453 /* ZipCombineLatestView.swift in Sources */,
 				4D70357C2AF541BA0023A7F6 /* FredboardView.swift in Sources */,
 				4D5847682AEA929400F55129 /* MockData.swift in Sources */,
 				4D7CD7BA2AF259D8000FAC29 /* GuitarView.swift in Sources */,

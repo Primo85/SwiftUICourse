@@ -6,12 +6,10 @@ final class TicTacToeViewModel: ObservableObject {
     @Published private(set) var cells: [TicTacToecell]
     @Published private(set) var players: [Player]
     @Published var isSummaryPresented: Bool = false
-    
     @Published private(set) var line: TicTacToeLineType?
     
     private var counter = CurrentValueSubject<Int, Never>(0)
     private var winnerIndex = CurrentValueSubject<Int?, Never>(nil)
-    private(set) var animationComleted = PassthroughSubject<Bool, Never>()
     let result = CurrentValueSubject<GameResult?, Never>(nil)
     private var currentPlayerIndex = 0
     private var currentState: TicTacToestate = .X
@@ -40,26 +38,24 @@ final class TicTacToeViewModel: ObservableObject {
         
         winnerIndex
             .map { [weak self] in self?.players[safe: $0]?.name }
-            .sink { [weak self] winner in
-                if let winner = winner {
-                    self?.result.send(.victory(winner))
-                }
-            }
+            .compactMap { $0 }
+            .map { GameResult.victory($0) }
+            .assign(to: \.value, on: result)
             .store(in: &subjects)
         
-        counter
-            .filter { $0 == 9 }
-            .zip(winnerIndex)
-            .sink { [weak self] con, ind in
-                if ind == nil {
-                    self?.result.send(.draw)
-                }
-            }
-            .store(in: &subjects)
-        
-        animationComleted
+        winnerIndex
+            .combineLatest(counter)
+            .map { $0 == nil && $1 == 9 }
             .filter { $0 }
-            .assign(to: &$isSummaryPresented) // TODO: try to combine counter and animationComleted somehow
+            .map { _ in GameResult.draw }
+            .assign(to: \.value, on: result)
+            .store(in: &subjects)
+        
+        result
+            .map { $0 != nil }
+            .filter { $0 }
+            .delay(for: 1, scheduler: RunLoop.main)
+            .assign(to: &$isSummaryPresented)
     }
     
     func click(on id: String) {

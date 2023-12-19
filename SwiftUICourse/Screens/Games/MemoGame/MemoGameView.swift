@@ -10,7 +10,6 @@ struct MemoGameView: View {
         self._viewModel = StateObject(wrappedValue: MemoGameViewModel(size: size,
                                                                       players: players))
         self._isPresented = isPresented
-        print("init MemoGameView")
     }
     
     var body: some View {

@@ -21,12 +21,12 @@ final class ZipCombineLatestViewModel: ObservableObject {
             .assign(to: &$textB)
         
         subjectA
-            .combineLatest(subjectA)
+            .combineLatest(subjectB)
             .map { "\($0) \($1)" }
             .assign(to: &$com)
         
         subjectA
-            .zip(subjectA)
+            .zip(subjectB)
             .map { "\($0) \($1)" }
             .assign(to: &$zip)
         
@@ -63,11 +63,13 @@ struct ZipCombineLatestView: View {
                     }
                 }
             }
+            .padding(.bottom)
             Text("combine latest:")
-            Text(viewModel.zip)
-                .font(.largeTitle)
-            Text("zip:")
             Text(viewModel.com)
+                .font(.largeTitle)
+                .padding(.bottom)
+            Text("zip:")
+            Text(viewModel.zip)
                 .font(.largeTitle)
         }
     }
