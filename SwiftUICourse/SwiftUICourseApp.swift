@@ -10,7 +10,8 @@ struct SwiftUICourseApp: App {
 //            MainView()
 //            GamesView()
 //            CombineTestView()
-            TestView()
+//            TestView()
+            ZipCombineLatestView()
 //            GuitarView()
 //            Text("Hello world")
 //                .onAppear() {
