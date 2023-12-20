@@ -10,18 +10,6 @@ struct SwiftUICourseApp: App {
 //            MainView()
             GamesView()
 //            CombineTestView()
-//            TestView()
-//            ZipCombineLatestView()
-//            HexSaperGameView(player: Player(name: "Przemo"), isPresented: .constant(true))
-//            GuitarView()
-//            Text("Hello world")
-//                .onAppear() {
-//                    Playground().start()
-//                }
-//            Image(systemName: "mountain.2")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 256, height: 256)
         }
     }
 }

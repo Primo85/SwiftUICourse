@@ -4,24 +4,20 @@ import Combine
 struct CombineTestView: View {
     
     @StateObject var viewModel = CombineTestViewModel()
+    @Binding private var isPresented: Bool
+    
+    init(isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+    }
     
     var body: some View {
         VStack {
-            Text(viewModel.text1)
-            Text(viewModel.text2)
-            Text(viewModel.text3)
-            AppButton("INCREASE") {
-                viewModel.increase()
+            AppButton("Zip CombineLAtest demo") {
+                viewModel.isZipCombineLAtestPresented = true
             }
-            AppButton("TOGGLE") {
-                viewModel.toggle()
-            }
-            AppButton("COMPLETION") {
-                viewModel.completion()
-            }
-            AppButton("CANCEL") {
-                viewModel.cancel()
-            }
+        }
+        .fullScreenCover(isPresented: $viewModel.isZipCombineLAtestPresented) {
+            ZipCombineLatestView(isPresented: $viewModel.isZipCombineLAtestPresented)
         }
     }
 }

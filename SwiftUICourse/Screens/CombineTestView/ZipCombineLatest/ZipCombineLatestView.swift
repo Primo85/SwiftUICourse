@@ -1,52 +1,18 @@
 import SwiftUI
 import Combine
 
-final class ZipCombineLatestViewModel: ObservableObject {
-    
-    @Published var textA: String = ""
-    @Published var textB: String = ""
-    @Published var zip: String = ""
-    @Published var com: String = ""
-    
-    let subjectA = CurrentValueSubject<Int, Never>(0)
-    let subjectB = CurrentValueSubject<Int, Never>(0)
-    
-    init() {
-        subjectA
-            .map { "\($0)" }
-            .assign(to: &$textA)
-        
-        subjectB
-            .map { "\($0)" }
-            .assign(to: &$textB)
-        
-        subjectA
-            .combineLatest(subjectB)
-            .map { "\($0) \($1)" }
-            .assign(to: &$com)
-        
-        subjectA
-            .zip(subjectB)
-            .map { "\($0) \($1)" }
-            .assign(to: &$zip)
-        
-    }
-    
-    func increaseA() {
-        subjectA.value++
-    }
-    
-    func increaseB() {
-        subjectB.value++
-    }
-}
-
 struct ZipCombineLatestView: View {
     
     @StateObject var viewModel = ZipCombineLatestViewModel()
+    @Binding private var isPresented: Bool
+    
+    init(isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+    }
     
     var body: some View {
         VStack {
+            XdissmissButton(isPresented: $isPresented)
             HStack {
                 VStack {
                     Text(viewModel.textA)
