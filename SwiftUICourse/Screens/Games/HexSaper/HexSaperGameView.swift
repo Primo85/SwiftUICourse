@@ -28,7 +28,6 @@ struct HexSaperGameView: View {
             DynamicStack {
                 XdissmissButton(isPresented: $isPresented)
                 // TODO: add timer feature
-                // TODO: add number of bomb
                 Text("Bomb  \(viewModel.bombCount)")
                 Text("Wins  \(viewModel.successes)")
                 Text("Fails \(viewModel.fails)")
@@ -49,7 +48,7 @@ struct HexSaperGameView: View {
     }
 }
 
-struct SaperHexView: View {
+struct SaperHexView: View { // TODO: refactor - too many
     
     let hex: SaperHex
     
@@ -75,20 +74,33 @@ struct SaperHexView: View {
         }
     }
     
+    private var color: Color {
+        switch hex.state {
+            case .marked:
+                    .gray
+            case .unmarked:
+                    .appTransparent
+            case .discover:
+                    .clear
+        }
+    }
+    
     var body: some View {
         HexView {
-            VStack() {
-                HStack {
-                    Spacer()
-                    Button {
-                        mark(hex.id)
-                    } label: {
-                        Text(markedFlag)
-                            .font(.system(size: 64.0))
+            HexView(color: color, scale: 0.8) {
+                VStack() {
+                    HStack {
+                        Spacer()
+                        Button {
+                            mark(hex.id)
+                        } label: {
+                            Text(markedFlag)
+                                .font(.system(size: 64.0))
+                        }
                     }
+                    Text(text)
+                        .font(.system(size: 64.0, weight: .heavy))
                 }
-                Text(text)
-                    .font(.system(size: 64.0, weight: .heavy))
             }
         }
     }

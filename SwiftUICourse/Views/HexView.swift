@@ -2,13 +2,22 @@ import SwiftUI
 
 struct HexView<T: View>: View {
     
+    let color: Color
+    let scale: CGFloat
+    
     let content: () -> T
+    
+    init(color: Color = .appTransparent, scale: CGFloat = 0.97, content: @escaping () -> T) {
+        self.color = color
+        self.scale = scale
+        self.content = content
+    }
     
     var body: some View {
         ZStack {
             HexShape()
-                .fill(Color.appTransparent)
-                .scaleEffect(0.97)
+                .fill(color)
+                .scaleEffect(scale)
             content()
         }
     }

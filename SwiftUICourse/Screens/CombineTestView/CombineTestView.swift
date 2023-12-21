@@ -4,11 +4,11 @@ import Combine
 struct CombineTestView: View {
     
     @StateObject var viewModel = CombineTestViewModel()
-    @Binding private var isPresented: Bool
-    
-    init(isPresented: Binding<Bool>) {
-        self._isPresented = isPresented
-    }
+//    @Binding private var isPresented: Bool
+//    
+//    init(isPresented: Binding<Bool>) {
+//        self._isPresented = isPresented
+//    }
     
     var body: some View {
         VStack {
@@ -21,72 +21,3 @@ struct CombineTestView: View {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct CombineTestView_Previews: PreviewProvider {
-    static var previews: some View {
-        CombineTestView()
-    }
-}
-
