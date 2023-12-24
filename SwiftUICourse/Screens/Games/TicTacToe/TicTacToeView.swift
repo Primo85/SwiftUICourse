@@ -44,9 +44,8 @@ struct TicTacToeView: View {
         .sheet(isPresented: $viewModel.isSummaryPresented) {
             GameSummaryView(isGamePresented: $isPresented,
                             isSummaryPresented: $viewModel.isSummaryPresented,
-                            result: viewModel.result.value!,
+                            result: viewModel.result.value,
                             reset: viewModel.reset)
         }
-#warning("RESOLVE THIS viewModel.result.value!")
     }
 }

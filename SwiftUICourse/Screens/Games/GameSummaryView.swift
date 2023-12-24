@@ -1,12 +1,25 @@
 import SwiftUI
 
-struct GameSummaryView: View {
+struct GameSummaryView<T: View>: View {
     
     @Binding var isGamePresented: Bool
     @Binding var isSummaryPresented: Bool
     
-    let result: GameResult
+    let result: GameResult?
     let reset: () -> Void
+    let additionalContent: () -> T
+    
+    init(isGamePresented: Binding<Bool>,
+         isSummaryPresented: Binding<Bool>,
+         result: GameResult?,
+         reset: @escaping () -> Void,
+         additionalContent: @escaping () -> T = { EmptyView() } ) {
+        self._isGamePresented = isGamePresented
+        self._isSummaryPresented = isSummaryPresented
+        self.result = result
+        self.reset = reset
+        self.additionalContent = additionalContent
+    }
     
     private var winEmoji: String { ["😀", "😃", "😁", "😋", "😅"].randomElement()! }
     private var lossEmoji: String { ["😫", "☹️", "😟", "😨", "😥"].randomElement()! }
@@ -23,7 +36,10 @@ struct GameSummaryView: View {
                 case .defeat:
                     Text("Przegrana \(lossEmoji)")
                         .font(.largeTitle)
+                case nil:
+                    Text("Koniec gry")
             }
+            additionalContent()
             Text("Czy zagrać jeszcze raz?")
             AppButton("Tak") {
                 reset()
@@ -33,6 +49,7 @@ struct GameSummaryView: View {
                 isGamePresented = false
             }
         }
+        .padding([.bottom, .top], 96.0)
     }
 }
 

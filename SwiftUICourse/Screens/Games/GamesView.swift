@@ -3,7 +3,8 @@ import SwiftUI
 struct GamesView: View {
     
     @State private var isMemoPresented: Bool = false
-    @State private var memoSizePresented = false
+    @State private var isMemoTestPresented: Bool = false
+    @State private var memoSizePresented: Bool = false
     @State private var isTicTacToePresented: Bool = false
     @State private var AIContentPresented: Bool = false
     @State private var isHexSaperPresented: Bool = false
@@ -65,6 +66,9 @@ struct GamesView: View {
                 AppButton("HEX SAPER", isActive: players.count == 1) {
                     isHexSaperPresented = true
                 }
+                AppButton("MEMO TEST", isActive: players.count == 1) {
+                    isMemoTestPresented = true
+                }
             }
             Spacer()
         }
@@ -80,6 +84,9 @@ struct GamesView: View {
         .fullScreenCover(isPresented: $isHexSaperPresented, content: {
             HexSaperGameView(player: players.first!, isPresented: $isHexSaperPresented)
         })
+        .fullScreenCover(isPresented: $isMemoTestPresented) {
+            MemoTestView(player: players.first!, isPresented: $isMemoTestPresented)
+        }
         .alert("Chose size",isPresented: $memoSizePresented) { // TODO: how to skip this alert ?
             ForEach(2..<9) { n in
                 AppButton("\(n)x\(n)            \(resultFor(size: n))") {

@@ -41,14 +41,13 @@ struct HexSaperGameView: View {
         .sheet(isPresented: $viewModel.isSummaryPresented) {
             GameSummaryView(isGamePresented: $isPresented,
                             isSummaryPresented: $viewModel.isSummaryPresented,
-                            result: viewModel.result.value!,
+                            result: viewModel.result.value,
                             reset: viewModel.reset)
         }
-#warning("RESOLVE THIS viewModel.result.value!")
     }
 }
 
-struct SaperHexView: View { // TODO: refactor - too many
+struct SaperHexView: View { // TODO: refactor - too many logic
     
     let hex: SaperHex
     

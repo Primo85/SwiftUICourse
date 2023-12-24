@@ -31,7 +31,7 @@ struct MemoGameView: View {
                 Text("Fails:       \(viewModel.failCounter)")
                 Text("Best result: \(String(viewModel.bestResult) ?? "-")")
                 PlayersResultsView(players: viewModel.players, currentID: viewModel.currentID)
-                AppButton("Reset") {
+                LongPressButton("Reset") {
                     viewModel.reset()
                 }
             }
@@ -41,10 +41,9 @@ struct MemoGameView: View {
         .sheet(isPresented: $viewModel.isSummaryPresented) {
             GameSummaryView(isGamePresented: $isPresented,
                             isSummaryPresented: $viewModel.isSummaryPresented,
-                            result: viewModel.result.value!,
+                            result: viewModel.result.value,
                             reset: viewModel.reset)
         }
-#warning("RESOLVE THIS viewModel.result.value!")
     }
 }
 

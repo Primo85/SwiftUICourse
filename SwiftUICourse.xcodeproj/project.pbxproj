@@ -23,7 +23,6 @@
 		4D5847612AEA8FC600F55129 /* ItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5847602AEA8FC600F55129 /* ItemsListView.swift */; };
 		4D5847632AEA911500F55129 /* ItemListPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5847622AEA911500F55129 /* ItemListPreView.swift */; };
 		4D5847682AEA929400F55129 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5847672AEA929400F55129 /* MockData.swift */; };
-		4D58476D2AEAE87600F55129 /* ButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58476C2AEAE87600F55129 /* ButtonLabel.swift */; };
 		4D58476F2AEAE9DD00F55129 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58476E2AEAE9DD00F55129 /* SafariView.swift */; };
 		4D5847712AEAF1CA00F55129 /* MemoGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5847702AEAF1CA00F55129 /* MemoGameView.swift */; };
 		4D5847742AEB088300F55129 /* MemoGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5847732AEB088300F55129 /* MemoGameViewModel.swift */; };
@@ -60,6 +59,8 @@
 		4DBF5DE92B0C751D00E0895F /* CombineTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF5DE82B0C751D00E0895F /* CombineTestView.swift */; };
 		4DD2A9AC2AE954AF0083213E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD2A9AB2AE954AF0083213E /* MainView.swift */; };
 		4DD7A99F2AFFA4EF001C15F1 /* DynamicStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD7A99E2AFFA4EF001C15F1 /* DynamicStack.swift */; };
+		4DDD549A2B36B22F00B5243C /* MemoTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD54982B36B22F00B5243C /* MemoTestView.swift */; };
+		4DDD549B2B36B22F00B5243C /* MemoTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD54992B36B22F00B5243C /* MemoTestViewModel.swift */; };
 		4DDD8B2C2B28470800C9423F /* CombineTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD8B2B2B28470800C9423F /* CombineTestViewModel.swift */; };
 		4DE385392B23187C00A33ACF /* GameSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE385382B23187C00A33ACF /* GameSummaryView.swift */; };
 		4DE3853B2B23387000A33ACF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3853A2B23387000A33ACF /* Extensions.swift */; };
@@ -103,7 +104,6 @@
 		4D5847602AEA8FC600F55129 /* ItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListView.swift; sourceTree = "<group>"; };
 		4D5847622AEA911500F55129 /* ItemListPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListPreView.swift; sourceTree = "<group>"; };
 		4D5847672AEA929400F55129 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
-		4D58476C2AEAE87600F55129 /* ButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabel.swift; sourceTree = "<group>"; };
 		4D58476E2AEAE9DD00F55129 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		4D5847702AEAF1CA00F55129 /* MemoGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoGameView.swift; sourceTree = "<group>"; };
 		4D5847732AEB088300F55129 /* MemoGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoGameViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +142,8 @@
 		4DBF5DE82B0C751D00E0895F /* CombineTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTestView.swift; sourceTree = "<group>"; };
 		4DD2A9AB2AE954AF0083213E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4DD7A99E2AFFA4EF001C15F1 /* DynamicStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStack.swift; sourceTree = "<group>"; };
+		4DDD54982B36B22F00B5243C /* MemoTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTestView.swift; sourceTree = "<group>"; };
+		4DDD54992B36B22F00B5243C /* MemoTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTestViewModel.swift; sourceTree = "<group>"; };
 		4DDD8B2B2B28470800C9423F /* CombineTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTestViewModel.swift; sourceTree = "<group>"; };
 		4DE385382B23187C00A33ACF /* GameSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSummaryView.swift; sourceTree = "<group>"; };
 		4DE3853A2B23387000A33ACF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				4DE385382B23187C00A33ACF /* GameSummaryView.swift */,
 				4D33800D2B00F962003C6FFC /* PlayersResultsView.swift */,
 				4D8D02212B2D5DF0004A4453 /* AIContent.swift */,
+				4DDD549C2B36B23600B5243C /* MemoTest */,
 				4D8D03C52B317EF9004A4453 /* HexSaper */,
 				4D5847722AEAF26C00F55129 /* MemoGame */,
 				4D33EB182B2155530000C9A8 /* TicTacToe */,
@@ -265,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				4D5847582AEA7DE800F55129 /* XdissmissButton.swift */,
-				4D58476C2AEAE87600F55129 /* ButtonLabel.swift */,
 				4D61F8832B00A4E2008E506D /* AppButton.swift */,
 				4D58476E2AEAE9DD00F55129 /* SafariView.swift */,
 				4D8D02542B2EDCF5004A4453 /* HexView.swift */,
@@ -385,6 +387,15 @@
 				4D5C7C272AF2A59D0037DA44 /* GuitarViewModel.swift */,
 			);
 			path = Guitar;
+			sourceTree = "<group>";
+		};
+		4DDD549C2B36B23600B5243C /* MemoTest */ = {
+			isa = PBXGroup;
+			children = (
+				4DDD54982B36B22F00B5243C /* MemoTestView.swift */,
+				4DDD54992B36B22F00B5243C /* MemoTestViewModel.swift */,
+			);
+			path = MemoTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,6 +535,7 @@
 				4D5C7C282AF2A59D0037DA44 /* GuitarViewModel.swift in Sources */,
 				4D941EF52AE8656700E03A41 /* ItemsViewModel.swift in Sources */,
 				4DD2A9AC2AE954AF0083213E /* MainView.swift in Sources */,
+				4DDD549B2B36B22F00B5243C /* MemoTestViewModel.swift in Sources */,
 				4D8D02532B2E3EDF004A4453 /* HexSaperGameView.swift in Sources */,
 				4D58476F2AEAE9DD00F55129 /* SafariView.swift in Sources */,
 				4D8D03D12B3244AD004A4453 /* ZipCombineLatestViewModel.swift in Sources */,
@@ -537,6 +549,7 @@
 				4D61F8822B009AC4008E506D /* GamesView.swift in Sources */,
 				4D5847742AEB088300F55129 /* MemoGameViewModel.swift in Sources */,
 				4DAB8B1B2AF087E400730082 /* scannerVC.swift in Sources */,
+				4DDD549A2B36B22F00B5243C /* MemoTestView.swift in Sources */,
 				4D8D02552B2EDCF5004A4453 /* HexView.swift in Sources */,
 				4D0B3CC92AE80FF000947BDF /* ItemsView.swift in Sources */,
 				4D58475D2AEA806400F55129 /* AppGrid.swift in Sources */,
@@ -555,7 +568,6 @@
 				4D0B3CC72AE80FF000947BDF /* SwiftUICourseApp.swift in Sources */,
 				4D5847762AEB08D400F55129 /* Card.swift in Sources */,
 				4D5847712AEAF1CA00F55129 /* MemoGameView.swift in Sources */,
-				4D58476D2AEAE87600F55129 /* ButtonLabel.swift in Sources */,
 				4D8D03C92B31F59B004A4453 /* SaperHex.swift in Sources */,
 				4DAB8B182AF0829900730082 /* QRscannerView.swift in Sources */,
 				4D33800E2B00F962003C6FFC /* PlayersResultsView.swift in Sources */,
