@@ -35,22 +35,3 @@ import Foundation
         set { storage.setValue(newValue, forKey: key.value) }
     }
 }
-
-/* TODO:
- simple:
- 
- @State
- @Binding
- 
- @AppStorage
- @SceneStorage
- 
- @Published
- 
- complex:
- 
- @StateObject
- @ObservedObject
- 
- @EnvironmentObject
- */

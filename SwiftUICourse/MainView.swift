@@ -30,17 +30,17 @@ struct MainView: View {
                                                imageName: "qrcode.viewfinder"))
                     }
                     NavigationLink {
-                        GuitarView()
+                        GuitarView(isPresented: .constant(true))
                     } label: {
                         ItemPreView(item: Item(name: "Fredboard",
                                                imageName: "guitars"))
                     }
-                    NavigationLink {
-                        GuitarView()
-                    } label: {
-                        ItemPreView(item: Item(name: "Fredboard",
-                                               imageName: "guitars"))
-                    }
+//                    NavigationLink {
+//                        GuitarView()
+//                    } label: {
+//                        ItemPreView(item: Item(name: "Fredboard",
+//                                               imageName: "guitars"))
+//                    }
                     NavigationLink {
                         CombineTestView()
                     } label: {

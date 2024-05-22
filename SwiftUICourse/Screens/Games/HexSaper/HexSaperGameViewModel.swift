@@ -100,7 +100,7 @@ class HexSaperGameViewModel: ObservableObject {
     
     private func checkEndOfGame() {
         if !table.contains(where: { $0.contains { !$0.resolved } }) {
-            result.send(.victory(player.name))
+            result.send(.victory(player: player.name))
         }
     }
     

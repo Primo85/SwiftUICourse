@@ -7,9 +7,13 @@ struct SwiftUICourseApp: App {
     
     var body: some Scene {
         WindowGroup {
+//            PlaygroundView()
+//            AccessibilityVoiceOverView()
 //            MainView()
             GamesView()
 //            CombineTestView()
+//            TestView()
+//            MathTestView(player: Player(name: "Paul"), isPresented: .constant(true))
         }
     }
 }

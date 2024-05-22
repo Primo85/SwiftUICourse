@@ -3,6 +3,11 @@ import SwiftUI
 struct GuitarView: View {
     
     @StateObject var viewModel: GuitarViewModel = GuitarViewModel()
+    @Binding private var isPresented: Bool
+    
+    init(isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+    }
     
     var body: some View {
         VStack {
@@ -14,6 +19,7 @@ struct GuitarView: View {
                 CircleOf5th(radious: 120,
                             selected: viewModel.scale.key,
                             action: viewModel.changeKey)
+                XdissmissButton(isPresented: $isPresented)
                 ScalesView(selectedScale: viewModel.scale.type,
                            action: viewModel.changeScaleType)
                 Spacer()
@@ -90,7 +96,7 @@ struct ScalesView: View {
 
 struct GuitarView_Previews: PreviewProvider {
     static var previews: some View {
-        GuitarView()
+        GuitarView(isPresented: .constant(true))
 //            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

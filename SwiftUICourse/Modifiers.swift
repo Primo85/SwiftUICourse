@@ -10,6 +10,19 @@ extension View {
     func onAnimationCompleted<Value: VectorArithmetic>(for value: Value, completion: @escaping () -> Void) -> ModifiedContent<Self, AnimationCompletionObserverModifier<Value>> {
         return modifier(AnimationCompletionObserverModifier(observedValue: value, completion: completion))
     } // TODO: read this modifier
+    
+    /// Applies the given transform if the given condition evaluates to `true`.
+    /// - Parameters:
+    ///   - condition: The condition to evaluate.
+    ///   - transform: The transform to apply to the source `View`.
+    /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
+    }
 }
 
 struct BackgroundGradient: ViewModifier {
@@ -83,4 +96,5 @@ struct AnimationCompletionObserverModifier<Value>: AnimatableModifier where Valu
 
 extension Color {
     static let appTransparent = Color(white: 0.5, opacity: 0.2)
+    static let appDarkTransparent = Color(white: 0.2, opacity: 0.2)
 }

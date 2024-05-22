@@ -3,7 +3,8 @@ import Combine
 
 final class MemoTestViewModel: ObservableObject {
     
-    private let gameSet: [Int] = [3,3,3,4,4,4,5,5,5,6]
+//    private let gameSet: [Int] = [3,3,3,4,4,4,5,5,5,6]
+    private let gameSet: [Int] = [3,3,3,3,3,3,3,3,4,4,4,4]
     private let player: Player
     
     @Published private(set) var table: [MemoCell] = []
@@ -80,7 +81,7 @@ final class MemoTestViewModel: ObservableObject {
         setIndex
             .sink { [weak self] in
                 if $0 == self?.gameSet.count {
-                    self?.result.send(.victory(self?.player.name ?? ""))
+                    self?.result.send(.victory(player: self?.player.name ?? ""))
                 }
             }
             .store(in: &subjects)

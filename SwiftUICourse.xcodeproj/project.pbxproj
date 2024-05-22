@@ -67,6 +67,16 @@
 		4DE3853D2B233BF700A33ACF /* TicTacToeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3853C2B233BF700A33ACF /* TicTacToeViewModel.swift */; };
 		4DE3853F2B233C4B00A33ACF /* TicTacToeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3853E2B233C4B00A33ACF /* TicTacToeCellView.swift */; };
 		4DE385412B233C7A00A33ACF /* TicTacToecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE385402B233C7A00A33ACF /* TicTacToecell.swift */; };
+		CFBC58522BFC4C7E00E9B7EA /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBC58502BFC4C7E00E9B7EA /* PlaygroundView.swift */; };
+		CFBC58532BFC4C7E00E9B7EA /* PlaygroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBC58512BFC4C7E00E9B7EA /* PlaygroundViewModel.swift */; };
+		CFBC58572BFCF5F000E9B7EA /* AccessibilityVoiceOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBC58552BFCF5F000E9B7EA /* AccessibilityVoiceOverView.swift */; };
+		CFBC58582BFCF5F000E9B7EA /* AccessibilityVoiceOverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBC58562BFCF5F000E9B7EA /* AccessibilityVoiceOverViewModel.swift */; };
+		CFFF41402BAA401200DE7ED8 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF413D2BAA401200DE7ED8 /* SudokuView.swift */; };
+		CFFF41412BAA401200DE7ED8 /* SudokuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF413E2BAA401200DE7ED8 /* SudokuViewModel.swift */; };
+		CFFF414D2BB03B0A00DE7ED8 /* MathTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF414A2BB03B0A00DE7ED8 /* MathTestView.swift */; };
+		CFFF414E2BB03B0A00DE7ED8 /* MathTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF414B2BB03B0A00DE7ED8 /* MathTestViewModel.swift */; };
+		CFFF41522BB28CF200DE7ED8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF41502BB28CF200DE7ED8 /* TestView.swift */; };
+		CFFF41532BB28CF200DE7ED8 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF41512BB28CF200DE7ED8 /* TestViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +160,16 @@
 		4DE3853C2B233BF700A33ACF /* TicTacToeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeViewModel.swift; sourceTree = "<group>"; };
 		4DE3853E2B233C4B00A33ACF /* TicTacToeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeCellView.swift; sourceTree = "<group>"; };
 		4DE385402B233C7A00A33ACF /* TicTacToecell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToecell.swift; sourceTree = "<group>"; };
+		CFBC58502BFC4C7E00E9B7EA /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
+		CFBC58512BFC4C7E00E9B7EA /* PlaygroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundViewModel.swift; sourceTree = "<group>"; };
+		CFBC58552BFCF5F000E9B7EA /* AccessibilityVoiceOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityVoiceOverView.swift; sourceTree = "<group>"; };
+		CFBC58562BFCF5F000E9B7EA /* AccessibilityVoiceOverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityVoiceOverViewModel.swift; sourceTree = "<group>"; };
+		CFFF413D2BAA401200DE7ED8 /* SudokuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
+		CFFF413E2BAA401200DE7ED8 /* SudokuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuViewModel.swift; sourceTree = "<group>"; };
+		CFFF414A2BB03B0A00DE7ED8 /* MathTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTestView.swift; sourceTree = "<group>"; };
+		CFFF414B2BB03B0A00DE7ED8 /* MathTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTestViewModel.swift; sourceTree = "<group>"; };
+		CFFF41502BB28CF200DE7ED8 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		CFFF41512BB28CF200DE7ED8 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +280,10 @@
 				4D8D03C52B317EF9004A4453 /* HexSaper */,
 				4D5847722AEAF26C00F55129 /* MemoGame */,
 				4D33EB182B2155530000C9A8 /* TicTacToe */,
+				CFFF41422BAA402300DE7ED8 /* Sudoku */,
+				CFFF414F2BB03B1A00DE7ED8 /* MathTest */,
+				CFFF41502BB28CF200DE7ED8 /* TestView.swift */,
+				CFFF41512BB28CF200DE7ED8 /* TestViewModel.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -304,6 +328,8 @@
 				4D1CFE482AE9A35600076583 /* IItems */,
 				4DD7A99B2AFF8079001C15F1 /* Guitar */,
 				4DBF5DEA2B0C752B00E0895F /* CombineTestView */,
+				CFBC58542BFC4C8F00E9B7EA /* Playground */,
+				CFBC58592BFCF5FA00E9B7EA /* AccessibilityVoiceOver */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -396,6 +422,42 @@
 				4DDD54992B36B22F00B5243C /* MemoTestViewModel.swift */,
 			);
 			path = MemoTest;
+			sourceTree = "<group>";
+		};
+		CFBC58542BFC4C8F00E9B7EA /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				CFBC58502BFC4C7E00E9B7EA /* PlaygroundView.swift */,
+				CFBC58512BFC4C7E00E9B7EA /* PlaygroundViewModel.swift */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
+		};
+		CFBC58592BFCF5FA00E9B7EA /* AccessibilityVoiceOver */ = {
+			isa = PBXGroup;
+			children = (
+				CFBC58552BFCF5F000E9B7EA /* AccessibilityVoiceOverView.swift */,
+				CFBC58562BFCF5F000E9B7EA /* AccessibilityVoiceOverViewModel.swift */,
+			);
+			path = AccessibilityVoiceOver;
+			sourceTree = "<group>";
+		};
+		CFFF41422BAA402300DE7ED8 /* Sudoku */ = {
+			isa = PBXGroup;
+			children = (
+				CFFF413D2BAA401200DE7ED8 /* SudokuView.swift */,
+				CFFF413E2BAA401200DE7ED8 /* SudokuViewModel.swift */,
+			);
+			path = Sudoku;
+			sourceTree = "<group>";
+		};
+		CFFF414F2BB03B1A00DE7ED8 /* MathTest */ = {
+			isa = PBXGroup;
+			children = (
+				CFFF414A2BB03B0A00DE7ED8 /* MathTestView.swift */,
+				CFFF414B2BB03B0A00DE7ED8 /* MathTestViewModel.swift */,
+			);
+			path = MathTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -536,6 +598,7 @@
 				4D941EF52AE8656700E03A41 /* ItemsViewModel.swift in Sources */,
 				4DD2A9AC2AE954AF0083213E /* MainView.swift in Sources */,
 				4DDD549B2B36B22F00B5243C /* MemoTestViewModel.swift in Sources */,
+				CFBC58572BFCF5F000E9B7EA /* AccessibilityVoiceOverView.swift in Sources */,
 				4D8D02532B2E3EDF004A4453 /* HexSaperGameView.swift in Sources */,
 				4D58476F2AEAE9DD00F55129 /* SafariView.swift in Sources */,
 				4D8D03D12B3244AD004A4453 /* ZipCombineLatestViewModel.swift in Sources */,
@@ -544,8 +607,10 @@
 				4D941EF12AE84D1C00E03A41 /* Item.swift in Sources */,
 				4D941EF32AE85F3D00E03A41 /* ItemDetailsView.swift in Sources */,
 				4DAB8B1D2AF08F4F00730082 /* ScannerView.swift in Sources */,
+				CFFF41402BAA401200DE7ED8 /* SudokuView.swift in Sources */,
 				4D5847612AEA8FC600F55129 /* ItemsListView.swift in Sources */,
 				4D3380102B01080B003C6FFC /* DynamicGrid.swift in Sources */,
+				CFBC58522BFC4C7E00E9B7EA /* PlaygroundView.swift in Sources */,
 				4D61F8822B009AC4008E506D /* GamesView.swift in Sources */,
 				4D5847742AEB088300F55129 /* MemoGameViewModel.swift in Sources */,
 				4DAB8B1B2AF087E400730082 /* scannerVC.swift in Sources */,
@@ -560,14 +625,20 @@
 				4D968A862B20020C007E6E4F /* Wrapers.swift in Sources */,
 				4D58475B2AEA7FD300F55129 /* ItemPreView.swift in Sources */,
 				4D33EB172B2155360000C9A8 /* TicTacToeView.swift in Sources */,
+				CFFF41522BB28CF200DE7ED8 /* TestView.swift in Sources */,
 				4DD7A99F2AFFA4EF001C15F1 /* DynamicStack.swift in Sources */,
 				4D5C7C262AF2A0720037DA44 /* FredView.swift in Sources */,
+				CFBC58582BFCF5F000E9B7EA /* AccessibilityVoiceOverViewModel.swift in Sources */,
 				4D8D02342B2DCDFB004A4453 /* Player.swift in Sources */,
 				4D8D02222B2D5DF0004A4453 /* AIContent.swift in Sources */,
 				4D0D57BA2B25EA9C001CFB61 /* TicTacToeLineView.swift in Sources */,
 				4D0B3CC72AE80FF000947BDF /* SwiftUICourseApp.swift in Sources */,
+				CFFF41412BAA401200DE7ED8 /* SudokuViewModel.swift in Sources */,
 				4D5847762AEB08D400F55129 /* Card.swift in Sources */,
+				CFBC58532BFC4C7E00E9B7EA /* PlaygroundViewModel.swift in Sources */,
+				CFFF41532BB28CF200DE7ED8 /* TestViewModel.swift in Sources */,
 				4D5847712AEAF1CA00F55129 /* MemoGameView.swift in Sources */,
+				CFFF414D2BB03B0A00DE7ED8 /* MathTestView.swift in Sources */,
 				4D8D03C92B31F59B004A4453 /* SaperHex.swift in Sources */,
 				4DAB8B182AF0829900730082 /* QRscannerView.swift in Sources */,
 				4D33800E2B00F962003C6FFC /* PlayersResultsView.swift in Sources */,
@@ -575,6 +646,7 @@
 				4D70357A2AF50EA30023A7F6 /* NutView.swift in Sources */,
 				4D8D03C42B317EC9004A4453 /* HexSaperGameViewModel.swift in Sources */,
 				4DBF5DE92B0C751D00E0895F /* CombineTestView.swift in Sources */,
+				CFFF414E2BB03B0A00DE7ED8 /* MathTestViewModel.swift in Sources */,
 				4DE3853B2B23387000A33ACF /* Extensions.swift in Sources */,
 				4DE3853F2B233C4B00A33ACF /* TicTacToeCellView.swift in Sources */,
 				4DDD8B2C2B28470800C9423F /* CombineTestViewModel.swift in Sources */,

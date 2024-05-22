@@ -98,7 +98,7 @@ final class MemoGameViewModel: ObservableObject {
     private func checkEndOfGame() {
         if pairs == getPoints() {
             if let winnerName = winnerName {
-                result.send(.victory(winnerName))
+                result.send(.victory(player: winnerName))
             } else {
                 result.send(.draw)
             }

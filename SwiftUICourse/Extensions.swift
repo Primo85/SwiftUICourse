@@ -10,6 +10,9 @@ extension String {
             return nil
         }
     }
+    
+    static var winEmoji: String { ["😀", "😃", "😁", "😋", "😅"].randomElement()! }
+    static var lossEmoji: String { ["😫", "☹️", "😟", "😨", "😥"].randomElement()! }
 }
 
 extension Array {

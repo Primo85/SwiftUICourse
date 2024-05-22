@@ -21,20 +21,17 @@ struct GameSummaryView<T: View>: View {
         self.additionalContent = additionalContent
     }
     
-    private var winEmoji: String { ["😀", "😃", "😁", "😋", "😅"].randomElement()! }
-    private var lossEmoji: String { ["😫", "☹️", "😟", "😨", "😥"].randomElement()! }
-    
     var body: some View {
         VStack(spacing: 16) {
             switch result {
                 case .victory(let winner):
-                    Text("Wygrywa \(winner) \(winEmoji)")
+                Text("Wygrywa \(winner) \(String.winEmoji)")
                         .font(.largeTitle)
                 case .draw:
                     Text("Remis")
                         .font(.largeTitle)
                 case .defeat:
-                    Text("Przegrana \(lossEmoji)")
+                Text("Przegrana \(String.lossEmoji)")
                         .font(.largeTitle)
                 case nil:
                     Text("Koniec gry")
@@ -54,7 +51,7 @@ struct GameSummaryView<T: View>: View {
 }
 
 enum GameResult: Equatable {
-    case victory(String)
+    case victory(player: String)
     case draw
     case defeat
 }

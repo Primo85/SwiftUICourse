@@ -39,7 +39,7 @@ final class TicTacToeViewModel: ObservableObject {
         winnerIndex
             .map { [weak self] in self?.players[safe: $0]?.name }
             .compactMap { $0 }
-            .map { GameResult.victory($0) }
+            .map { GameResult.victory(player: $0) }
             .assign(to: \.value, on: result)
             .store(in: &subjects)
         
